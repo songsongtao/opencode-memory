@@ -1,4 +1,4 @@
-# opencode-memory
+# supereasy-memory
 
 Persistent memory plugin for OpenCode, ported from the excellent [pi-memory](https://pi.dev/packages/@samfp/pi-memory?name=memory).
 
@@ -23,14 +23,14 @@ This plugin is available on npm and does not require a separate Bun installation
 
 1. Install the package:
 ```bash
-npm install -g opencode-memory
+npm install -g supereasy-memory
 ```
 
 2. Open your `opencode.json` configuration file and add the package name to the `plugin` array:
 ```json
 {
   "plugin": [
-    "opencode-memory"
+    "supereasy-memory"
   ]
 }
 ```
@@ -91,3 +91,4 @@ This project is licensed under the [MIT License](LICENSE).
 ## Acknowledgements
 
 This plugin is a port of [samfoy/pi-memory](https://pi.dev/packages/@samfp/pi-memory?name=memory). Special thanks to the original author for the incredible design and logic.
+

@@ -1,7 +1,7 @@
 # OpenCode Memory - Agent Guidelines
 
 ## 🤖 Context for AI Agents
-You are working on the `opencode-memory` plugin, a persistent memory extension for OpenCode AI. This file provides you with the critical context needed to understand, modify, and deploy this codebase correctly.
+You are working on the `supereasy-memory` plugin, a persistent memory extension for OpenCode AI. This file provides you with the critical context needed to understand, modify, and deploy this codebase correctly.
 
 ## ⚠️ MANDATORY RULE: Documentation Sync
 **ANY TIME you modify the logic, tools, or behavior of this plugin, you MUST simultaneously update:**
@@ -58,3 +58,4 @@ When the user installs this plugin, they gain 5 tools:
 - `memory_forget`: Deletes specific keys or lesson IDs.
 
 If the user gives you an instruction like "Remember that I prefer TypeScript," you should proactively invoke the `memory_remember` tool. **You do not need to ask for permission to remember things if the user explicitly commanded you to do so.**
+

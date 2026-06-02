@@ -1,5 +1,5 @@
 /**
- * 针对 opencode-memory 存储层与注入层的简单测试脚本。
+ * 针对 supereasy-memory 存储层与注入层的简单测试脚本。
  * 运行方式: bun run test.ts
  */
 import { MemoryStore } from "./store.js";
@@ -17,7 +17,7 @@ try {
   rmSync(TEST_DB + "-shm", { force: true });
 } catch {}
 
-console.log("=== opencode-memory 测试套件 ===\n");
+console.log("=== supereasy-memory 测试套件 ===\n");
 
 // 测试 1: 初始化数据库存储实例
 console.log("1. 创建 MemoryStore 实例...");
@@ -176,3 +176,4 @@ try {
 } catch {}
 
 console.log("=== 所有测试用例已顺利通过！ ===");
+

@@ -1,4 +1,4 @@
-# opencode-memory
+# supereasy-memory
 
 OpenCode 的持久化记忆插件。移植自优秀的 [pi-memory](https://pi.dev/packages/@samfp/pi-memory?name=memory)。
 
@@ -23,14 +23,14 @@ OpenCode 的持久化记忆插件。移植自优秀的 [pi-memory](https://pi.de
 
 1. 全局安装 npm 包：
 ```bash
-npm install -g opencode-memory
+npm install -g supereasy-memory
 ```
 
 2. 打开您的 `opencode.json` 配置文件，将包名直接添加到 `plugin` 数组中：
 ```json
 {
   "plugin": [
-    "opencode-memory"
+    "supereasy-memory"
   ]
 }
 ```
@@ -117,3 +117,4 @@ AI 保存后会告知你选择的作用域，你可以随时要求修改：
 ## 致谢
 
 本插件深度移植自 [samfoy/pi-memory](https://pi.dev/packages/@samfp/pi-memory?name=memory)，非常感谢原作者卓越的设计与逻辑。
+

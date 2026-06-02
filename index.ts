@@ -1,5 +1,5 @@
 /**
- * opencode-memory — OpenCode 的持久化记忆插件。
+ * supereasy-memory — OpenCode 的持久化记忆插件。
  *
  * 移植自 pi-memory (https://github.com/samfoy/pi-memory)。
  * 能够在会话中学习用户的纠正、偏好和模式。
@@ -335,7 +335,7 @@ const memoryStats = tool({
 
 // ─── 插件级全局状态 ────────────────────────────────────────────
 
-const MEMORY_MARKER = "<!-- opencode-memory-context -->";
+const MEMORY_MARKER = "<!-- supereasy-memory-context -->";
 let currentProjectId: string = "";
 let currentProjectDisplayName: string = "";
 let globalClient: any = null; // 保存 client 供 Tool 内部使用
@@ -429,10 +429,10 @@ export const MemoryPlugin = async ({
               variant: "info",
               duration: 3000
             }
-          }).catch((e: any) => console.error("[opencode-memory] Toast error:", e));
+          }).catch((e: any) => console.error("[supereasy-memory] Toast error:", e));
         }
       } catch (err) {
-        console.error(`[opencode-memory] Error injecting memory:`, err);
+        console.error(`[supereasy-memory] Error injecting memory:`, err);
       }
     },
 
@@ -454,10 +454,11 @@ export const MemoryPlugin = async ({
           );
         }
       } catch (err) {
-        console.error(`[opencode-memory] Error during compaction:`, err);
+        console.error(`[supereasy-memory] Error during compaction:`, err);
       }
     },
   };
 };
 
 export default MemoryPlugin;
+
