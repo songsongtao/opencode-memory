@@ -19,6 +19,7 @@ This extension gives your AI assistant the ability to remember your preferences,
 - **Zero Configuration** — No need to configure external models or API keys; it runs seamlessly using OpenCode's native environment.
 - **Optimized Prompts** — Carefully tuned system prompts and injection mechanisms ensure the AI effectively utilizes the memory without degrading conversational quality.
 - **Visual Feedback** — Provides an unobtrusive Toast notification upon successful memory injection, so you always know when your context is ready.
+- **Real-time Hot Updates** — Memories taught to the AI mid-conversation take effect instantly on the very next message without needing to restart or reload the window!
 
 ## Screenshots
 
