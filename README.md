@@ -44,7 +44,7 @@ npm install -g supereasy-memory
 }
 ```
 
-3. 重启或重载 OpenCode (`Ctrl/Cmd + R`) 即可生效。
+3. 重启或重载 OpenCode 即可生效。
 
 ## 工具
 
