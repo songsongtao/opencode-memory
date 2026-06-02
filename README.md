@@ -18,6 +18,7 @@ This extension gives your AI assistant the ability to remember your preferences,
 - **Full-Text Search** — Powered by FTS5 full-text search (with graceful fallback to fuzzy matching).
 - **Zero Configuration** — No need to configure external models or API keys; it runs seamlessly using OpenCode's native environment.
 - **Optimized Prompts** — Carefully tuned system prompts and injection mechanisms ensure the AI effectively utilizes the memory without degrading conversational quality.
+- **Visual Feedback** — Provides an unobtrusive Toast notification upon successful memory injection, so you always know when your context is ready.
 
 ## Installation
 
