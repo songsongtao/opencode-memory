@@ -6,6 +6,11 @@ This extension gives your AI assistant the ability to remember your preferences,
 
 [中文文档](./README.zh-CN.md)
 
+## Screenshots
+
+![Example 1](./example.png)
+![Example 2](./example2.png)
+
 ## Features
 
 - **Persistent Storage** — Uses SQLite to store memories, ensuring they persist across different OpenCode sessions.

@@ -6,6 +6,11 @@ OpenCode 的持久化记忆插件。移植自优秀的 [pi-memory](https://pi.de
 
 [English Documentation](./README.md)
 
+## 截图预览
+
+![示例 1](./example.png)
+![示例 2](./example2.png)
+
 ## 功能
 
 - **持久化存储** — 使用 SQLite 存储记忆，跨会话持久化
