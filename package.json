@@ -1,6 +1,6 @@
 {
   "name": "supereasy-memory",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Persistent memory plugin for OpenCode that learns from sessions.",
   "type": "module",
   "main": "index.ts",
