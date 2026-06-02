@@ -16,6 +16,8 @@ This extension gives your AI assistant the ability to remember your preferences,
 - **Intelligent Project Detection** — Uses git remote URLs to identify projects, automatically sharing memory across multiple clones of the same repository.
 - **Lessons Learned** — Manages corrections and lessons separately, using Jaccard similarity deduplication to prevent redundant rules.
 - **Full-Text Search** — Powered by FTS5 full-text search (with graceful fallback to fuzzy matching).
+- **Zero Configuration** — No need to configure external models or API keys; it runs seamlessly using OpenCode's native environment.
+- **Optimized Prompts** — Carefully tuned system prompts and injection mechanisms ensure the AI effectively utilizes the memory without degrading conversational quality.
 
 ## Installation
 
