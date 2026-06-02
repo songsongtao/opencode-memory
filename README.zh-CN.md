@@ -118,3 +118,4 @@ AI 保存后会告知你选择的作用域，你可以随时要求修改：
 
 本插件深度移植自 [samfoy/pi-memory](https://pi.dev/packages/@samfp/pi-memory?name=memory)，非常感谢原作者卓越的设计与逻辑。
 
+

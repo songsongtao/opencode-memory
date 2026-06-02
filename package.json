@@ -6,7 +6,7 @@
   "main": "index.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/songsongtao/supereasy-memory.git"
+    "url": "https://github.com/songsongtao/opencode-memory.git"
   },
   "keywords": [
     "opencode",
@@ -25,4 +25,5 @@
     "@opencode-ai/plugin": "^1.15.13"
   }
 }
+
 
