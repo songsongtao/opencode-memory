@@ -19,17 +19,21 @@ OpenCode 的持久化记忆插件。移植自优秀的 [pi-memory](https://pi.de
 
 ## 安装
 
-在 `opencode.json` 中引用本地路径：
+1. 将仓库克隆到本地机器：
+```bash
+git clone https://github.com/songsongtao/opencode-memory.git
+```
 
+2. 打开您的 `opencode.json` 配置文件，将克隆下来的绝对路径添加到 `plugin` 数组中：
 ```json
 {
   "plugin": [
-    "E:/project/openc"
+    "/您的/本地/绝对路径/opencode-memory"
   ]
 }
 ```
 
-重启 OpenCode 即可生效。
+3. 重启或重载 OpenCode (`Ctrl/Cmd + R`) 即可生效。
 
 ## 工具
 

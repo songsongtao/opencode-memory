@@ -19,17 +19,21 @@ This extension gives your AI assistant the ability to remember your preferences,
 
 ## Installation
 
-Add the local path to your `opencode.json` configuration:
+1. Clone the repository to your local machine:
+```bash
+git clone https://github.com/songsongtao/opencode-memory.git
+```
 
+2. Open your `opencode.json` configuration file and add the absolute path to the cloned directory into the `plugin` array:
 ```json
 {
   "plugin": [
-    "E:/project/openc"
+    "/absolute/path/to/opencode-memory"
   ]
 }
 ```
 
-Restart OpenCode for the changes to take effect.
+3. Restart or reload OpenCode (`Ctrl/Cmd + R`) for the changes to take effect.
 
 ## Available Tools
 
