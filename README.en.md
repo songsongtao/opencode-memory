@@ -88,7 +88,7 @@ Every memory fact has a scope:
 
 ## Data Storage
 
-Database is safely located in your home directory at: `~/.supereasy-memory/memory.db`
+Database is safely stored within OpenCode's configuration directory: `~/.config/opencode/memory.db`
 
 Uses SQLite in WAL mode to support concurrent reads.
 

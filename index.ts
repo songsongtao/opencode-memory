@@ -33,14 +33,14 @@ let store: MemoryStore | null = null;
 
 /**
  * 获取或初始化全局的 MemoryStore 数据库实例。
- * 数据库文件将存放在用户主目录下的安全路径中: ~/.supereasy-memory/memory.db
- * 这防止了 npm 更新时删除全局 node_modules 导致的数据丢失。
+ * 数据库文件将存放在 OpenCode 配置目录下: ~/.config/opencode/memory.db
+ * 这既防止了 npm 更新时删除全局 node_modules 导致的数据丢失，又保持了用户目录的整洁。
  *
  * @returns {MemoryStore} 初始化的内存存储实例
  */
 function getStore(): MemoryStore {
   if (!store) {
-    const configDir = join(homedir(), ".supereasy-memory");
+    const configDir = join(homedir(), ".config", "opencode");
     if (!existsSync(configDir)) {
       mkdirSync(configDir, { recursive: true });
     }
