@@ -39,7 +39,7 @@ npm install -g supereasy-memory
 ```json
 {
   "plugin": [
-    "supereasy-memory"
+    "supereasy-memory@latest"
   ]
 }
 ```
