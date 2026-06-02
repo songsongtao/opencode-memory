@@ -114,7 +114,7 @@ AI 保存后会告知你选择的作用域，你可以随时要求修改：
 
 ## 数据存储
 
-数据库安全地统一存储在 OpenCode 的配置目录中：`~/.config/opencode/memory.db`
+数据库安全地统一存储在 OpenCode 的配置目录中：`~/.config/opencode/supereasy-memory.db`
 
 使用 SQLite WAL 模式，支持并发读取。
 
