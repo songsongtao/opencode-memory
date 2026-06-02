@@ -19,16 +19,18 @@ OpenCode 的持久化记忆插件。移植自优秀的 [pi-memory](https://pi.de
 
 ## 安装
 
-1. 将仓库克隆到本地机器：
+本插件已发布至 npm，且无需额外安装 Bun 环境（OpenCode 内部已内置运行环境）。
+
+1. 全局安装 npm 包：
 ```bash
-git clone https://github.com/songsongtao/opencode-memory.git
+npm install -g opencode-memory
 ```
 
-2. 打开您的 `opencode.json` 配置文件，将克隆下来的绝对路径添加到 `plugin` 数组中：
+2. 打开您的 `opencode.json` 配置文件，将包名直接添加到 `plugin` 数组中：
 ```json
 {
   "plugin": [
-    "/您的/本地/绝对路径/opencode-memory"
+    "opencode-memory"
   ]
 }
 ```

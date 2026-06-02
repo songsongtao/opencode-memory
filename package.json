@@ -1,8 +1,22 @@
 {
   "name": "opencode-memory",
   "version": "1.0.0",
+  "description": "Persistent memory plugin for OpenCode that learns from sessions.",
   "type": "module",
   "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/songsongtao/opencode-memory.git"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "memory",
+    "ai",
+    "agent"
+  ],
+  "author": "songsongtao",
+  "license": "MIT",
   "scripts": {},
   "devDependencies": {
     "@types/bun": "^1.3.14"

@@ -19,16 +19,18 @@ This extension gives your AI assistant the ability to remember your preferences,
 
 ## Installation
 
-1. Clone the repository to your local machine:
+This plugin is available on npm and does not require a separate Bun installation (OpenCode has Bun built-in).
+
+1. Install the package:
 ```bash
-git clone https://github.com/songsongtao/opencode-memory.git
+npm install -g opencode-memory
 ```
 
-2. Open your `opencode.json` configuration file and add the absolute path to the cloned directory into the `plugin` array:
+2. Open your `opencode.json` configuration file and add the package name to the `plugin` array:
 ```json
 {
   "plugin": [
-    "/absolute/path/to/opencode-memory"
+    "opencode-memory"
   ]
 }
 ```
