@@ -14,9 +14,10 @@
  * - 针对经验教训 (lessons) 的 Jaccard 相似度去重算法
  */
 import { tool } from "@opencode-ai/plugin";
-import { join } from "node:path";
+import { join, dirname, basename } from "node:path";
 import { fileURLToPath } from "node:url";
-import { dirname, basename } from "node:path";
+import { homedir } from "node:os";
+import { mkdirSync, existsSync } from "node:fs";
 import { MemoryStore } from "./store.js";
 import {
   buildContextBlock,
@@ -32,13 +33,18 @@ let store: MemoryStore | null = null;
 
 /**
  * 获取或初始化全局的 MemoryStore 数据库实例。
- * 数据库文件将存放在插件自带的目录下: <pluginDir>/data/memory.db
+ * 数据库文件将存放在用户主目录下的安全路径中: ~/.supereasy-memory/memory.db
+ * 这防止了 npm 更新时删除全局 node_modules 导致的数据丢失。
  *
  * @returns {MemoryStore} 初始化的内存存储实例
  */
 function getStore(): MemoryStore {
   if (!store) {
-    const dbPath = join(__dirname, "data", "memory.db");
+    const configDir = join(homedir(), ".supereasy-memory");
+    if (!existsSync(configDir)) {
+      mkdirSync(configDir, { recursive: true });
+    }
+    const dbPath = join(configDir, "memory.db");
     store = new MemoryStore(dbPath);
   }
   return store;

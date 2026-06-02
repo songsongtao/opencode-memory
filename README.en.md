@@ -4,12 +4,7 @@ Persistent memory plugin for OpenCode, ported from the excellent [pi-memory](htt
 
 This extension gives your AI assistant the ability to remember your preferences, project patterns, and corrections across sessions.
 
-[中文文档](./README.zh-CN.md)
-
-## Screenshots
-
-![Example 1](./example.png)
-![Example 2](./example2.png)
+[中文文档](./README.md)
 
 ## Features
 
@@ -24,6 +19,11 @@ This extension gives your AI assistant the ability to remember your preferences,
 - **Zero Configuration** — No need to configure external models or API keys; it runs seamlessly using OpenCode's native environment.
 - **Optimized Prompts** — Carefully tuned system prompts and injection mechanisms ensure the AI effectively utilizes the memory without degrading conversational quality.
 - **Visual Feedback** — Provides an unobtrusive Toast notification upon successful memory injection, so you always know when your context is ready.
+
+## Screenshots
+
+![Example 1](./example.png)
+![Example 2](./example2.png)
 
 ## Installation
 
@@ -88,7 +88,7 @@ Every memory fact has a scope:
 
 ## Data Storage
 
-Database is located at: `<plugin_dir>/data/memory.db`
+Database is safely located in your home directory at: `~/.supereasy-memory/memory.db`
 
 Uses SQLite in WAL mode to support concurrent reads.
 

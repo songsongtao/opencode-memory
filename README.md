@@ -4,12 +4,7 @@ OpenCode 的持久化记忆插件。移植自优秀的 [pi-memory](https://pi.de
 
 让 AI 助手能够跨会话记住你的偏好、项目模式和纠正经验。
 
-[English Documentation](./README.md)
-
-## 截图预览
-
-![示例 1](./example.png)
-![示例 2](./example2.png)
+[English Documentation](./README.en.md)
 
 ## 功能
 
@@ -24,6 +19,11 @@ OpenCode 的持久化记忆插件。移植自优秀的 [pi-memory](https://pi.de
 - **零额外配置** — 彻底开箱即用，无需额外配置任何模型或 API 密钥，直接复用 OpenCode 的底层原生能力。
 - **极致的提示词优化** — 经过精心调优的注入机制与 Prompt 优化，确保 AI 既能准确命中记忆，又不会消耗多余的上下文。
 - **可视化注入反馈** — 成功注入记忆后会触发优雅的 Toast 气泡提示，让您清晰地感知到记忆上下文已准备就绪。
+
+## 截图预览
+
+![示例 1](./example.png)
+![示例 2](./example2.png)
 
 ## 安装
 
@@ -114,7 +114,7 @@ AI 保存后会告知你选择的作用域，你可以随时要求修改：
 
 ## 数据存储
 
-数据库位于插件目录内：`<plugin_dir>/data/memory.db`
+数据库安全地存储在您的用户主目录下：`~/.supereasy-memory/memory.db`
 
 使用 SQLite WAL 模式，支持并发读取。
 
