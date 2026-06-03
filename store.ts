@@ -132,47 +132,18 @@ export class MemoryStore {
   }
 
   private migrate(): void {
-    // 检查并执行表结构迁移：如果旧表的 key 是 PRIMARY KEY，必须迁移为 UNIQUE(key, project)
+    // 检查并执行表结构清理：如果旧表的 key 是 PRIMARY KEY，直接清理重建（不考虑向后兼容）
     try {
       const semanticInfo = this.db.prepare(`SELECT sql FROM sqlite_master WHERE type='table' AND name='semantic'`).get() as { sql: string } | undefined;
       
       if (semanticInfo && semanticInfo.sql.includes('PRIMARY KEY')) {
-        // 需要迁移表结构
-        const migrateTx = this.db.transaction(() => {
-          // 创建新表
-          this.db.exec(`
-            CREATE TABLE semantic_new (
-              key TEXT NOT NULL,
-              value TEXT NOT NULL,
-              confidence REAL NOT NULL DEFAULT 0.8,
-              source TEXT NOT NULL DEFAULT 'user',
-              created_at TEXT NOT NULL DEFAULT (datetime('now')),
-              updated_at TEXT NOT NULL DEFAULT (datetime('now')),
-              last_accessed TEXT,
-              project TEXT,
-              UNIQUE(key, project)
-            );
-          `);
-          
-          // 迁移数据
-          const hasProjectCol = semanticInfo.sql.includes('project');
-          if (hasProjectCol) {
-            this.db.exec(`INSERT INTO semantic_new SELECT key, value, confidence, source, created_at, updated_at, last_accessed, project FROM semantic`);
-          } else {
-            this.db.exec(`INSERT INTO semantic_new (key, value, confidence, source, created_at, updated_at, last_accessed, project) SELECT key, value, confidence, source, created_at, updated_at, last_accessed, NULL FROM semantic`);
-          }
-          
-          // 删除旧触发器和表
-          this.db.exec(`DROP TRIGGER IF EXISTS semantic_ai`);
-          this.db.exec(`DROP TRIGGER IF EXISTS semantic_ad`);
-          this.db.exec(`DROP TRIGGER IF EXISTS semantic_au`);
-          this.db.exec(`DROP TABLE semantic`);
-          this.db.exec(`ALTER TABLE semantic_new RENAME TO semantic`);
-        });
-        migrateTx();
+        this.db.exec(`DROP TRIGGER IF EXISTS semantic_ai`);
+        this.db.exec(`DROP TRIGGER IF EXISTS semantic_ad`);
+        this.db.exec(`DROP TRIGGER IF EXISTS semantic_au`);
+        this.db.exec(`DROP TABLE semantic`);
       }
     } catch (e) {
-      console.error("[supereasy-memory] Migration failed:", e);
+      console.error("[supereasy-memory] Cleanup failed:", e);
     }
 
     this.db.exec(`
