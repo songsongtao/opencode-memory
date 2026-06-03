@@ -60,11 +60,11 @@ npm install -g supereasy-memory
 ### Storing Preferences
 Tell the AI:
 - *"Remember: I prefer conventional commits."* (AI defaults to global scope)
-- *"Remember to use Next.js App Router for this project."* (AI defaults to project scope)
+- *"Add memory: use Next.js App Router for this project."* (AI defaults to project scope)
 
 ### Storing Lessons
 - *"Remember the lesson: don't use `echo >>` for writing notes, use `sed` instead."*
-- *"Remember: always show me a preview before deploying."*
+- *"Add lesson: always show me a preview before deploying."*
 
 ### Searching & Managing Memory
 - *"Search for my preferences regarding git."*
