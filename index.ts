@@ -384,12 +384,41 @@ export const MemoryPlugin = async ({
       _input: {},
       output: {
         messages: Array<{
-          info: { role: string };
+          info: { role: string; agent?: string };
           parts: Array<{ type: string; text?: string }>;
         }>;
       },
     ) => {
       try {
+        if (!output.messages || !output.messages.length) return;
+
+        // 核心修复：更健壮的判断方式
+        // 优先使用 SDK 检查当前 session 是否有 parentID (即判断是否为派生的子代理)
+        let isSubagent = false;
+        const sessionID = output.messages[0].info.sessionID;
+        
+        if (globalClient && typeof globalClient.sessions?.get === "function" && sessionID) {
+          try {
+            const res = await globalClient.sessions.get({ sessionID });
+            if (res && res.data && res.data.parentID) {
+              isSubagent = true;
+            } else if (res && (res as any).parentID) {
+              isSubagent = true;
+            }
+          } catch (e) {
+            // Ignore API error and fallback
+          }
+        }
+        
+        // 兜底策略：检查 tools.task 是否为 false（子代理一般没有发派任务的权限）
+        if (!isSubagent && (output.messages[0].info as any).tools?.task === false) {
+          isSubagent = true;
+        }
+
+        if (isSubagent) {
+          return;
+        }
+
         const s = getStore();
         const block = buildContextBlock(s, currentProjectId);
         if (!block.text || !output.messages.length) return;
