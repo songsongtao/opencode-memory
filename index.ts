@@ -78,7 +78,7 @@ function stripQuotes(v: string): string {
 
 const memorySearch = tool({
   description:
-    "Search stored memories (facts and lessons) by keyword. Use this to find relevant past knowledge before making decisions.",
+    "Search stored memories (facts and lessons) by keyword. Use this proactively to find relevant past knowledge before making decisions or answering questions, or when the user explicitly asks to 'search memory' (搜索记忆), 'what did I say' (我之前说了什么) etc.",
   args: {
     query: tool.schema
       .string()
@@ -120,7 +120,7 @@ const memorySearch = tool({
 
 const memoryRemember = tool({
   description:
-    'Store a fact or lesson in persistent memory. Facts are key-value pairs with prefixes like "pref.", "env.", "tool.", "user.". Lessons are corrections or validated approaches. Use this when the user says "remember this" or when you notice an important preference or correction. After saving, ALWAYS tell the user the chosen scope (global or project) and hint they can change it.',
+    'Store a fact or lesson in persistent memory. Facts are key-value pairs (e.g. "pref.", "env.", "tool.", "user."). Lessons are corrections or validated approaches. PROACTIVELY use this when the user says "remember this" (记住这个), "add memory" (添加记忆), "add lesson" (添加教训) or when you notice an important preference or correction. NEVER ask for permission if the user explicitly commands you to remember something. After saving, ALWAYS tell the user the chosen scope (global or project) and hint they can change it.',
   args: {
     type: tool.schema
       .enum(["fact", "lesson"])
@@ -218,7 +218,7 @@ const memoryRemember = tool({
 
 const memoryForget = tool({
   description:
-    "Delete a specific memory by its key (for facts) or ID (for lessons). For facts, deletes both global and project-scoped versions unless scope is specified.",
+    "Delete a specific memory by its key (for facts) or ID (for lessons). Use this when the user says 'forget this' (忘了这个), 'delete memory' (删除记忆). For facts, deletes both global and project-scoped versions unless scope is specified.",
   args: {
     type: tool.schema
       .enum(["fact", "lesson"])
