@@ -132,20 +132,6 @@ export class MemoryStore {
   }
 
   private migrate(): void {
-    // 检查并执行表结构清理：如果旧表的 key 是 PRIMARY KEY，直接清理重建（不考虑向后兼容）
-    try {
-      const semanticInfo = this.db.prepare(`SELECT sql FROM sqlite_master WHERE type='table' AND name='semantic'`).get() as { sql: string } | undefined;
-      
-      if (semanticInfo && semanticInfo.sql.includes('PRIMARY KEY')) {
-        this.db.exec(`DROP TRIGGER IF EXISTS semantic_ai`);
-        this.db.exec(`DROP TRIGGER IF EXISTS semantic_ad`);
-        this.db.exec(`DROP TRIGGER IF EXISTS semantic_au`);
-        this.db.exec(`DROP TABLE semantic`);
-      }
-    } catch (e) {
-      console.error("[supereasy-memory] Cleanup failed:", e);
-    }
-
     this.db.exec(`
       CREATE TABLE IF NOT EXISTS semantic (
         key TEXT NOT NULL,
